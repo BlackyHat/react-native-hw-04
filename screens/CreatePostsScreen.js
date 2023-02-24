@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
-  View,
-  KeyboardAvoidingView,
-  Text,
   TouchableWithoutFeedback,
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard,
+  View,
+  Text,
   TextInput,
   TouchableOpacity,
-  Keyboard,
+  StyleSheet,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -62,7 +63,6 @@ const CreatePostsScreen = ({ navigation }) => {
                 placeholder="Місцевість..."
                 style={[styles.input, styles.addPlace]}
                 onFocus={() => setIsKeyboardShow(true)}
-                //   location-outline
               />
               <Ionicons
                 style={styles.locationIcon}

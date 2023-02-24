@@ -1,7 +1,9 @@
 import React from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, FlatList } from "react-native";
+import PostItemSimple from "../components/PostItemSimple/PostItemSimple";
+import { userPosts } from "../components/userPosts";
 
-const image = "../img/user-foto.jpg";
+const image = "../img//user-foto.jpg";
 
 const PostsScreen = () => {
   return (
@@ -13,6 +15,11 @@ const PostsScreen = () => {
           <Text style={styles.userEmail}>email@example.com</Text>
         </View>
       </View>
+      <FlatList
+        data={userPosts}
+        renderItem={({ item }) => <PostItemSimple data={item} />}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 };

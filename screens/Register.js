@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { MaterialIcons } from "@expo/vector-icons";
+
 import {
   StyleSheet,
   View,
@@ -10,6 +13,7 @@ import {
   Platform,
   TouchableOpacity,
   Image,
+  Pressable,
   Text,
 } from "react-native";
 
@@ -55,19 +59,30 @@ const Register = ({ navigation }) => {
               },
             ]}
           >
-            <TouchableOpacity
-              style={[
-                styles.addButton,
-                {
-                  transform: [{ translateY: 75 }, { translateX: 10 }],
-                },
-              ]}
+            {/* <Pressable
+              style={{
+                transform: [{ translateY: 75 }, { translateX: 10 }],
+              }}
             >
-              <Image
-                source={require("../img/icon-plus.png")}
-                style={{ width: 13, height: 13 }}
+              <Ionicons name="add-circle-outline" size={13} color="#FF6C00" />
+            </Pressable> */}
+            <Pressable
+              style={styles.addButton}
+              onPress={() => {
+                console.log("2023");
+              }}
+            >
+              <MaterialIcons
+                name="highlight-remove"
+                size={24}
+                color="#FF6C00"
+                style={{
+                  backgroundColor: "#fff",
+                  borderRadius: 50,
+                  transform: [{ rotate: "45deg" }],
+                }}
               />
-            </TouchableOpacity>
+            </Pressable>
           </View>
           <Text style={styles.registerTitle}>Реєстрація</Text>
 
@@ -160,21 +175,11 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   addButton: {
-    width: 25,
-    height: 25,
-    backgroundColor: "#fff",
-    borderColor: "1px solid orange",
     position: "absolute",
-    top: 0,
-    right: 0,
-    borderRadius: 50,
-    borderColor: "#FF6C00",
-    borderStyle: "solid",
-    borderWidth: 1,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    bottom: 14,
+    right: -12,
   },
+
   registerTitle: {
     fontFamily: "Roboto",
     fontSize: 30,

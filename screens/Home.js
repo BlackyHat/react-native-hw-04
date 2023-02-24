@@ -6,11 +6,11 @@ import ProfileScreen from "./ProfileScreen";
 import CreatePostsScreen from "./CreatePostsScreen";
 import PostsScreen from "./PostsScreen";
 
-const Tabs = createBottomTabNavigator();
+const MainBottomTabs = createBottomTabNavigator();
 
-const Home = ({ navigation }) => {
+const HomeTabs = ({ navigation }) => {
   return (
-    <Tabs.Navigator
+    <MainBottomTabs.Navigator
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         tabBarStyle,
@@ -49,7 +49,7 @@ const Home = ({ navigation }) => {
         },
       })}
     >
-      <Tabs.Screen
+      <MainBottomTabs.Screen
         name="Posts"
         component={PostsScreen}
         options={{
@@ -70,7 +70,7 @@ const Home = ({ navigation }) => {
           ),
         }}
       />
-      <Tabs.Screen
+      <MainBottomTabs.Screen
         name="Create"
         component={CreatePostsScreen}
         options={{
@@ -89,26 +89,12 @@ const Home = ({ navigation }) => {
           ),
         }}
       />
-      <Tabs.Screen
+      <MainBottomTabs.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{
-          title: "Ваш профіль",
-          headerTitleStyle,
-          headerTitleAlign: "center",
-          headerLeft: () => (
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Posts")}
-              title="Info"
-              color="#fff"
-              style={{ marginLeft: 16 }}
-            >
-              <Ionicons name="arrow-back-outline" size={24} color="#BDBDBD" />
-            </TouchableOpacity>
-          ),
-        }}
+        options={{ headerShown: false }}
       />
-    </Tabs.Navigator>
+    </MainBottomTabs.Navigator>
   );
 };
 
@@ -147,4 +133,4 @@ const tabBarStyle = {
   alignItems: "center",
 };
 
-export default Home;
+export default HomeTabs;

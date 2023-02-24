@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
-  View,
-  TextInput,
   TouchableWithoutFeedback,
-  Keyboard,
   KeyboardAvoidingView,
   Platform,
-  Text,
+  Keyboard,
   ImageBackground,
+  View,
+  Text,
+  TextInput,
   TouchableOpacity,
+  StyleSheet,
 } from "react-native";
 
 const image = "../img/photo-bg.jpg";

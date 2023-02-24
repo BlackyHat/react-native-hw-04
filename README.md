@@ -7,3 +7,4 @@ add home screen
 add post screen
 add create post screen
 add profile screen
+add private routing
